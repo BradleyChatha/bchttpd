@@ -1,14 +1,9 @@
-FROM golang:alpine AS BUILD
+FROM golang:alpine
 
-WORKDIR /build
+WORKDIR /go/src/bchttpd
 COPY . .
 RUN go get .
-RUN go build . -o bchttpd
-
-FROM alpine:latest AS RUN
-
-COPY --from=BUILD /build /app
-WORKDIR /app
+RUN go install .
 
 ENV BCHTTPD_PORT=8080
 ENV BCHTTPD_ROOT=/var/www
