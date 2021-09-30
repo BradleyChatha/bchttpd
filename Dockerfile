@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM alpine:latest
 
 WORKDIR /app
 COPY bchttpd .
