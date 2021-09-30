@@ -10,4 +10,4 @@ EXPOSE 8080/tcp
 
 VOLUME /var/www
 
-CMD ["bchttpd"]
+CMD ["/app/bchttpd"]
