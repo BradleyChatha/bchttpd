@@ -11,16 +11,14 @@ steps:
   - cp $GOPATH/bin/bchttpd .
 
 - name: Publish
-  image: plugins/ecr
+  image: plugins/docker
   settings:
-    access_key:
-      from_secret: AWS_ACCESS_KEY
-    secret_key:
-      from_secret: AWS_SECRET_KEY
-    repo: chatha/bchttpd
-    registry: 
-      from_secret: AWS_REGISTRY
-    region: eu-west-2
+    username:
+        from_secret: DOCKER_USERNAME
+    password:
+        from_secret: DOCKER_PASSWORD
+    repo: bradleychatha/bchttpd
+    tags: latest
 
 trigger:
   branch:
