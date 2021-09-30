@@ -17,7 +17,7 @@ steps:
       from_secret: AWS_ACCESS_KEY
     secret_key:
       from_secret: AWS_SECRET_KEY
-    repo: bchttpd
+    repo: chatha/bchttpd
     registry: 
       from_secret: AWS_REGISTRY
     region: eu-west-2
