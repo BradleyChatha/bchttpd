@@ -1,0 +1,26 @@
+---
+kind: pipeline
+type: docker
+name: Default
+
+steps:
+- name: Build
+  image: golang:alpine
+  commands:
+  - go build .
+
+- name: Publish
+  image: plugins/ecr
+  settings:
+    access_key:
+      from_secret: AWS_ACCESS_KEY
+    secret_key:
+      from_secret: AWS_SECRET_KEY
+    repo: bchttpd
+    registry: 
+      from_secret: AWS_REGISTRY
+    region: eu-west-2
+
+trigger:
+  branch:
+    - master
