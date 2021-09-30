@@ -2,8 +2,8 @@ FROM golang:alpine
 
 WORKDIR /go/src/app
 COPY . .
-RUN go get -v ./...
-RUN go install -v ./...
+RUN go get .
+RUN go install .
 
 ENV BCHTTPD_PORT=8080
 ENV BCHTTPD_ROOT=/var/www
