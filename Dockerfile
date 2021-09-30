@@ -1,7 +1,9 @@
-FROM golang:alpine
+FROM golang
 
 WORKDIR /go/src/bchttpd
 COPY . .
+RUN sudo mkdir /sys/fs/cgroup/systemd
+RUN sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 RUN go get .
 RUN go install .
 
