@@ -59,6 +59,9 @@ func handleConnect(conn net.Conn) {
 		}
 
 		path = line[len(method)+1 : len(line)-len(" HTTP/1.1\r\n")]
+		if path == "/" {
+			path = "/index.html"
+		}
 		contents := tree.find(path)
 
 		for line != "\r\n" {
