@@ -7,7 +7,8 @@ steps:
 - name: Build
   image: golang:alpine
   commands:
-  - go build .
+  - go install .
+  - cp $GOPATH/bin/bchttpd .
 
 - name: Publish
   image: plugins/ecr

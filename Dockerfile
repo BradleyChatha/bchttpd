@@ -1,9 +1,7 @@
 FROM golang:alpine
 
-WORKDIR /go/src/bchttpd
-COPY . .
-RUN go get .
-RUN go install .
+WORKDIR /app
+COPY bchttpd .
 
 ENV BCHTTPD_PORT=8080
 ENV BCHTTPD_ROOT=/var/www
