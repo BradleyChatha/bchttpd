@@ -3,8 +3,7 @@ FROM alpine:latest
 WORKDIR /app
 COPY bchttpd .
 
-ENV BCHTTPD_PORT=8080
-ENV BCHTTPD_ROOT=/var/www
+ENV GIN_MODE=release
 
 EXPOSE 8080/tcp
 

@@ -1,10 +1,5 @@
 # Overview
 
-This is an ultra lightweight HTTP server.
+A next to useless project. A Gin server that only serves static files and exposes prometheus metrics.
 
-All it supports is HTTP GET, and that's by design because I'll be running this on memory constrained machines that simply
-serve static files.
-
-I used Go because I wanted a tiny footprint with easy and efficient networking, which Go excels at.
-
-It uses a Radix tree for routing.
+It *was* a bit more interesting before I made it a Gin server, buuuut meh.
